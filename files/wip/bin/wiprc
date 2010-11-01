@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# NOTE: this file is meant to be "sourced" rather than executed directly.
+
+wip() {
+  cmd="$1"
+
+  wip-route() {
+    result=$({ wip-ruby "route" $*; } 2>&1)
+
+    if [ -d "$result" ] ; then
+      echo "------------------------------------------------------------------------------"
+      echo " work : $result"
+      echo "------------------------------------------------------------------------------"
+      cd $result
+
+      [[ -s "./.wiprc" ]] && source ./.wiprc
+      export WIP_BACK=`pwd`
+    else
+      echo "$result"
+    fi
+  }
+
+  case "${cmd:-default}" in
+    default)
+      wip-ruby index .
+      ;;
+    *)
+      wip-route $*
+      ;;
+  esac
+}

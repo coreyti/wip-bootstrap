@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    wip-bootstrap (1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  wip-bootstrap!
