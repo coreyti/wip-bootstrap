@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'wip-bootstrap'
+  WIP::Bootstrap.run
+rescue
+  raise 'Failed to bootstrap `wip`'
+end

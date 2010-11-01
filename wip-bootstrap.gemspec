@@ -18,4 +18,15 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+    s.post_install_message = %Q{
+Thank you for installing #{s.name} v#{s.version}
+------------------------------------------------------------------------------
+NOTE: Please run
+
+    wip-bootstrap
+
+To update your bash profile with `wip` functions and such.
+------------------------------------------------------------------------------
+}
 end
