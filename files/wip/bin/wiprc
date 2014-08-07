@@ -14,7 +14,7 @@ wip() {
       echo "------------------------------------------------------------------------------"
       cd $result
 
-      [[ -s "./.wiprc" ]] && source ./.wiprc
+      [[ -s "./.wiprc" ]]
       export WIP_BACK=`pwd`
     else
       echo "$result"
